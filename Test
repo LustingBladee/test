@@ -1,0 +1,691 @@
+pcall(function()
+	_G.Diamond = false
+	_G.TargetOthers = false
+	_G.Rocket = false
+	_G.CBring = false
+	_G.Unblind:Disconnect()
+	_G.OthersJoin:Disconnect()
+end)
+
+--Instances--
+
+local PortGuiV1 = Instance.new("ScreenGui")
+local Border = Instance.new("Frame")
+local UICorner = Instance.new("UICorner")
+local Buffer = Instance.new("Frame")
+local UICorner_2 = Instance.new("UICorner")
+local UIGradient = Instance.new("UIGradient")
+local BaseFrame = Instance.new("ScrollingFrame")
+local DragFrame = Instance.new("Frame")
+local UICorner_3 = Instance.new("UICorner")
+local Diamond = Instance.new("TextButton")
+local UICorner_4 = Instance.new("UICorner")
+local CBring = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+local Rocket = Instance.new("TextButton")
+local UICorner_6 = Instance.new("UICorner")
+local TargetsLabel = Instance.new("TextLabel")
+local TargetsFrame = Instance.new("Frame")
+local UIGridLayout = Instance.new("UIGridLayout")
+local TargetName = Instance.new("TextBox")
+local UICorner_17 = Instance.new("UICorner")
+local Target = Instance.new("TextButton")
+local UICorner_18 = Instance.new("UICorner")
+local UnTarget = Instance.new("TextButton")
+local UICorner_19 = Instance.new("UICorner")
+local Username = Instance.new("TextButton")
+local UICorner_20 = Instance.new("UICorner")
+local DisplayName = Instance.new("TextButton")
+local UICorner_21 = Instance.new("UICorner")
+local All = Instance.new("TextButton")
+local UICorner_22 = Instance.new("UICorner")
+local Credits = Instance.new("TextLabel")
+
+--Properties--
+
+PortGuiV1.Name = "PortGuiV1"
+
+Border.Name = "Border"
+Border.Parent = DragFrame
+Border.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Border.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Border.BorderSizePixel = 0
+Border.Position = UDim2.new(0.5, 0, 0.5, 0)
+Border.Size = UDim2.new(0, 410, 0, 228)
+Border.AnchorPoint = Vector2.new(0.5,0.5)
+
+DragFrame.Name = "DragFrame"
+DragFrame.Parent = PortGuiV1
+DragFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DragFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DragFrame.BorderSizePixel = 0
+DragFrame.Position = UDim2.new(0.377896547, 0, 0.427325606, 0)
+DragFrame.Size = UDim2.new(0, 470, 0, 288)
+DragFrame.ZIndex = 1
+DragFrame.BackgroundTransparency = 1
+
+UICorner.Parent = Border
+
+Buffer.Name = "Buffer"
+Buffer.Parent = Border
+Buffer.AnchorPoint = Vector2.new(0.5, 0.5)
+Buffer.BackgroundColor3 = Color3.fromRGB(6, 10, 35)
+Buffer.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Buffer.BorderSizePixel = 0
+Buffer.Position = UDim2.new(0.5, 0, 0.5, 0)
+Buffer.Size = UDim2.new(0.949999988, 0, 0.899999976, 0)
+
+UICorner_2.Parent = Buffer
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(8, 51, 124)), ColorSequenceKeypoint.new(0.45, Color3.fromRGB(4, 31, 94)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(1, 7, 58))}
+UIGradient.Rotation = 90
+UIGradient.Parent = Border
+
+BaseFrame.Name = "BaseFrame"
+BaseFrame.Parent = Border
+BaseFrame.AnchorPoint = Vector2.new(0.5, 0.5)
+BaseFrame.BackgroundColor3 = Color3.fromRGB(6, 10, 35)
+BaseFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
+BaseFrame.BorderSizePixel = 0
+BaseFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
+BaseFrame.Size = UDim2.new(0.949999988, -10, 0.899999976, 0)
+BaseFrame.ScrollBarThickness = 10
+
+UICorner_3.Parent = BaseFrame
+
+Diamond.Name = "Diamond"
+Diamond.Parent = BaseFrame
+Diamond.AnchorPoint = Vector2.new(0.5, 0.5)
+Diamond.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+Diamond.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Diamond.BorderSizePixel = 0
+Diamond.Position = UDim2.new(0.219999999, 0, 0.100000001, 0)
+Diamond.Size = UDim2.new(0, 88, 0, 47)
+Diamond.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+Diamond.Text = [[Diamond: 
+OFF]]
+Diamond.TextColor3 = Color3.fromRGB(130, 167, 255)
+Diamond.TextSize = 14.000
+Diamond.TextWrapped = true
+
+UICorner_4.Parent = Diamond
+
+CBring.Name = "CBring"
+CBring.Parent = BaseFrame
+CBring.AnchorPoint = Vector2.new(0.5, 0.5)
+CBring.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+CBring.BorderColor3 = Color3.fromRGB(0, 0, 0)
+CBring.BorderSizePixel = 0
+CBring.Position = UDim2.new(0.5, 0, 0.100000001, 0)
+CBring.Size = UDim2.new(0, 88, 0, 47)
+CBring.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+CBring.Text = [[CBring: 
+OFF]]
+CBring.TextColor3 = Color3.fromRGB(130, 167, 255)
+CBring.TextSize = 14.000
+CBring.TextWrapped = true
+
+UICorner_5.Parent = CBring
+
+Rocket.Name = "Rocket"
+Rocket.Parent = BaseFrame
+Rocket.AnchorPoint = Vector2.new(0.5, 0.5)
+Rocket.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+Rocket.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Rocket.BorderSizePixel = 0
+Rocket.Position = UDim2.new(0.779999971, 0, 0.100000001, 0)
+Rocket.Size = UDim2.new(0, 88, 0, 47)
+Rocket.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+Rocket.Text = [[Rocket: 
+OFF]]
+Rocket.TextColor3 = Color3.fromRGB(130, 167, 255)
+Rocket.TextSize = 14.000
+
+UICorner_6.Parent = Rocket
+
+TargetsLabel.Name = "TargetsLabel"
+TargetsLabel.Parent = BaseFrame
+TargetsLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TargetsLabel.BackgroundTransparency = 1.000
+TargetsLabel.BorderColor3 = Color3.fromRGB(130, 167, 255)
+TargetsLabel.BorderSizePixel = 0
+TargetsLabel.Position = UDim2.new(0.366271436, 0, 0.197368398, 0)
+TargetsLabel.Size = UDim2.new(0, 100, 0, 25)
+TargetsLabel.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.Bold)
+TargetsLabel.Text = "TARGETS"
+TargetsLabel.TextColor3 = Color3.fromRGB(130, 167, 255)
+TargetsLabel.TextSize = 14.000
+
+TargetsFrame.Name = "TargetsFrame"
+TargetsFrame.Parent = BaseFrame
+TargetsFrame.BackgroundColor3 = Color3.fromRGB(0, 17, 44)
+TargetsFrame.BorderColor3 = Color3.fromRGB(131, 167, 255)
+TargetsFrame.BorderSizePixel = 2
+TargetsFrame.Position = UDim2.new(0.10013175, 0, 0.582905591, 0)
+TargetsFrame.Size = UDim2.new(0, 301, 0, 150)
+
+UIGridLayout.Parent = TargetsFrame
+UIGridLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+UIGridLayout.CellPadding = UDim2.new(0, 12, 0, 8)
+UIGridLayout.CellSize = UDim2.new(0, 130, 0, 20)
+
+TargetName.Name = "TargetName"
+TargetName.Parent = BaseFrame
+TargetName.BackgroundColor3 = Color3.fromRGB(58, 71, 100)
+TargetName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+TargetName.BorderSizePixel = 0
+TargetName.Position = UDim2.new(0.102766797, 0, 0.268115133, 0)
+TargetName.Size = UDim2.new(0, 301, 0, 26)
+TargetName.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+TargetName.PlaceholderColor3 = Color3.fromRGB(132, 167, 255)
+TargetName.PlaceholderText = "Target's Name Goes Here"
+TargetName.Text = ""
+TargetName.TextColor3 = Color3.fromRGB(132, 167, 255)
+TargetName.TextSize = 14.000
+
+UICorner_17.Parent = TargetName
+
+Target.Name = "Target"
+Target.Parent = BaseFrame
+Target.AnchorPoint = Vector2.new(0.5, 0.5)
+Target.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+Target.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Target.BorderSizePixel = 0
+Target.Position = UDim2.new(0.291812778, 0, 0.377048463, 0)
+Target.Size = UDim2.new(0, 143, 0, 23)
+Target.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+Target.Text = "Target"
+Target.TextColor3 = Color3.fromRGB(130, 167, 255)
+Target.TextSize = 14.000
+
+UICorner_18.Parent = Target
+
+UnTarget.Name = "UnTarget"
+UnTarget.Parent = BaseFrame
+UnTarget.AnchorPoint = Vector2.new(0.5, 0.5)
+UnTarget.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+UnTarget.BorderColor3 = Color3.fromRGB(0, 0, 0)
+UnTarget.BorderSizePixel = 0
+UnTarget.Position = UDim2.new(0.708150089, 0, 0.377048463, 0)
+UnTarget.Size = UDim2.new(0, 143, 0, 23)
+UnTarget.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+UnTarget.Text = "UnTarget"
+UnTarget.TextColor3 = Color3.fromRGB(130, 167, 255)
+UnTarget.TextSize = 14.000
+
+UICorner_19.Parent = UnTarget
+
+Username.Name = "Username"
+Username.Parent = BaseFrame
+Username.AnchorPoint = Vector2.new(0.5, 0.5)
+Username.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+Username.BorderColor3 = Color3.fromRGB(0, 0, 0)
+Username.BorderSizePixel = 0
+Username.Position = UDim2.new(0.708150089, 0, 0.453802824, 0)
+Username.Size = UDim2.new(0, 143, 0, 23)
+Username.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+Username.Text = "Username"
+Username.TextColor3 = Color3.fromRGB(130, 167, 255)
+Username.TextSize = 14.000
+
+UICorner_20.Parent = Username
+
+DisplayName.Name = "DisplayName"
+DisplayName.Parent = BaseFrame
+DisplayName.AnchorPoint = Vector2.new(0.5, 0.5)
+DisplayName.BackgroundColor3 = Color3.fromRGB(16, 31, 63)
+DisplayName.BorderColor3 = Color3.fromRGB(0, 0, 0)
+DisplayName.BorderSizePixel = 0
+DisplayName.Position = UDim2.new(0.291812778, 0, 0.453802824, 0)
+DisplayName.Size = UDim2.new(0, 143, 0, 23)
+DisplayName.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+DisplayName.Text = "DisplayName"
+DisplayName.TextColor3 = Color3.fromRGB(130, 167, 255)
+DisplayName.TextSize = 14.000
+
+UICorner_21.Parent = DisplayName
+
+All.Name = "All"
+All.Parent = BaseFrame
+All.AnchorPoint = Vector2.new(0.5, 0.5)
+All.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+All.BorderColor3 = Color3.fromRGB(0, 0, 0)
+All.BorderSizePixel = 0
+All.Position = UDim2.new(0.499980927, 0, 0.524410486, 0)
+All.Size = UDim2.new(0, 300, 0, 23)
+All.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+All.Text = "Target All: OFF"
+All.TextColor3 = Color3.fromRGB(130, 167, 255)
+All.TextSize = 14.000
+
+UICorner_22.Parent = All
+
+Credits.Name = "Credits"
+Credits.Parent = BaseFrame
+Credits.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Credits.BackgroundTransparency = 1.000
+Credits.BorderColor3 = Color3.fromRGB(130, 167, 255)
+Credits.BorderSizePixel = 0
+Credits.Position = UDim2.new(0.363636374, 0, 0.932017446, 0)
+Credits.Size = UDim2.new(0, 100, 0, 25)
+Credits.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.Bold)
+Credits.Text = "Designed And Scripted By: ForgFiend#9636"
+Credits.TextColor3 = Color3.fromRGB(130, 167, 255)
+Credits.TextSize = 14.000
+
+--BorderEffect
+spawn(function()
+	while true do
+		task.wait()
+		UIGradient.Rotation = UIGradient.Rotation + 2
+	end
+end)
+
+DragFrame.Draggable = true
+DragFrame.Active = true
+DragFrame.Selectable = true
+
+local Services = {
+	Players = game:GetService('Players'),
+	RunService = game:GetService('RunService'),
+	CoreGui = game:GetService('CoreGui'),
+	Workspace = game:GetService('Workspace'),
+	ReplicatedStorage = game:GetService('ReplicatedStorage'),
+	UserService = game:GetService('UserService')
+}
+local SafeGuis = {
+	'BubbleChat',
+	'CatalogScreenGui',
+	'Chat',
+	'DeathScreenGui',
+	'ProximityPrompts',
+	'SidePanelScript'
+}
+local OthersTable = {}
+local Insert = Services.ReplicatedStorage.Remotes.ToggleAsset
+local LP = Services.Players.LocalPlayer --Your Player
+local Damage = math.huge --InfiniteDamage
+local DiamondID = 173755801 --DiamondBladeID
+local DiamondName = 'Diamond Blade Sword' --DiamondBladeName
+local RocketID = 169602103 --RocketJumperID
+local RocketName = 'RocketJumper' --RocketJumberName
+if not _G.Targets then
+	_G.Targets = {}
+end
+
+if not _G.Filter then
+	_G.Filter = 'Display'
+end
+
+local function FireRemote(Path, ...)
+	if Path == nil then
+		return error("Remote Doesn't Exist")
+	end
+	local Args = {...}
+	if Path:IsA('RemoteFunction') then
+		Path:InvokeServer(unpack(Args))
+	elseif Path:IsA('RemoteEvent') then
+		Path:FireServer(unpack(Args))
+	end
+end
+local function DiamondFunction(Target,Damage)
+	pcall(function()
+		if LP.Backpack:FindFirstChild(DiamondName) then
+			Path = LP.Backpack:FindFirstChild(DiamondName).GearScript.Controller
+		elseif LP.Character:FindFirstChild(DiamondName) then
+			Path = LP.Character:FindFirstChild(DiamondName).GearScript.Controller
+		end
+		FireRemote(Path,7,Target,Damage)
+	end)
+end
+local function ToggleGear(ID)
+	Insert:InvokeServer(ID)
+end
+local function InsertGear(ToolId, ToolName)
+	if not LP.Backpack:FindFirstChild(ToolName) and not LP.Character:FindFirstChild(ToolName) then
+		ToggleGear(ToolId)
+	end
+end
+local function TargetPlayer(player, button) --TargetsPlayers
+		if table.find(_G.Targets, player.UserId) then
+			local Index = table.find(_G.Targets, player.UserId)
+			table.remove(_G.Targets, Index)
+			button.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+		else
+			table.insert(_G.Targets, player.UserId)
+			button.BackgroundColor3 = Color3.fromRGB(16, 31, 66)
+		end
+end
+local function PlayerAdded(Player) --FiresWhenPlayerAdded
+	local PlayerButton = Instance.new('TextButton')
+	local RoundCorner = Instance.new("UICorner")
+	local IDValue = Instance.new('NumberValue')
+	if table.find(_G.Targets, Player.UserId) then
+		PlayerButton.BackgroundColor3 = Color3.fromRGB(16, 31, 66)
+	else
+		PlayerButton.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+	end
+	if _G.Filter == 'Display' then
+		PlayerButton.Name = Player.DisplayName
+		PlayerButton.Text = Player.DisplayName
+	else
+		PlayerButton.Name = Player.Name
+		PlayerButton.Text = Player.Name
+	end
+	RoundCorner.Parent = PlayerButton
+	IDValue.Value = Player.UserId
+	IDValue.Name = Player.UserId
+	IDValue.Parent = PlayerButton
+	PlayerButton.AnchorPoint = Vector2.new(0.5, 0.5)
+	PlayerButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	PlayerButton.BorderSizePixel = 0
+	PlayerButton.Position = UDim2.new(0.254883647, 0, 0.866034269, 0)
+	PlayerButton.Size = UDim2.new(0, 129, 0, 20)
+	PlayerButton.FontFace = Font.fromName('JosefinSans', Enum.FontWeight.SemiBold)
+	PlayerButton.TextColor3 = Color3.fromRGB(130, 167, 255)
+	PlayerButton.TextSize = 14.000
+	PlayerButton.TextWrapped = true
+	PlayerButton.Parent = TargetsFrame
+	PlayerButton.MouseButton1Click:Connect(function()
+		TargetPlayer(Player, PlayerButton)
+	end)
+end
+local function PlayerRemoved(Player)
+	if TargetsFrame:FindFirstChild(Player.Name) then
+		TargetsFrame[Player.Name]:Destroy()
+	end
+end
+local function RocketFunction(Angle,Position)
+    pcall(function()
+        if LP.Backpack:FindFirstChild('RocketJumper') then
+            Path = LP.Backpack:FindFirstChild('RocketJumper').FireRocket
+        elseif LP.Character:FindFirstChild('RocketJumper') then
+            Path = LP.Character:FindFirstChild('RocketJumper').FireRocket
+        end
+        FireRemote(Path,Angle,Position)
+    end)
+end
+local function CBringFunction(Char)
+    pcall(function()
+        if LP.Character and LP.Character:FindFirstChildOfClass('Tool') and LP.Character:FindFirstChildOfClass("Tool").Handle then
+            for i,v in pairs(Char:GetDescendants()) do
+                if v:IsA("BasePart") then
+                    v.Anchored = true
+                    v.Massless = true
+                    v.CanCollide = false
+                    v.CFrame = LP.Character:FindFirstChildOfClass("Tool").Handle.CFrame * CFrame.new(Vector3.new(0, 0, 0))
+                elseif v:IsA("Tool") or v:IsA("Motor6D") or v:IsA("Attachment") then
+                    v:Remove()
+                end
+            end
+        else
+            return warn("ERROR('No Tool'")
+        end
+    end)
+end
+
+for i,player in ipairs(game.Players:GetPlayers()) do
+	if player ~= LP then
+		PlayerAdded(player)
+	end
+end
+
+Services.Players.PlayerAdded:Connect(PlayerAdded)
+Services.Players.PlayerRemoving:Connect(PlayerRemoved)
+
+if _G.Filter == 'Display' then
+	Username.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+	DisplayName.BackgroundColor3 = Color3.fromRGB(16, 31, 66)
+	for i,v in pairs(TargetsFrame:GetChildren()) do
+		if v:IsA('TextButton') then
+			PlayerId = v:FindFirstChildOfClass('NumberValue').Value
+			local Success, UserData = pcall(function() return Services.UserService:GetUserInfosByUserIdsAsync({PlayerId}) end)
+			if Success then
+				for _,c in ipairs(UserData) do
+					Name = c.DisplayName
+					v.Name = Name
+					v.Text = Name
+				end
+			end
+		end
+	end
+else
+	Username.BackgroundColor3 = Color3.fromRGB(16, 31, 66)
+	DisplayName.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+	for i,v in pairs(TargetsFrame:GetChildren()) do
+		if v:IsA('TextButton') then
+			PlayerId = v:FindFirstChildOfClass('NumberValue').Value
+			local Success, UserData = pcall(function() return Services.UserService:GetUserInfosByUserIdsAsync({PlayerId}) end)
+			if Success then
+				for _,c in ipairs(UserData) do
+					Name = c.Username
+					v.Name = Name
+					v.Text = Name
+				end
+			end
+		end
+	end
+end
+
+--TargetUser
+Target.MouseButton1Click:Connect(function()
+	local Text = TargetName.Text
+	if Text == '' then
+		return warn('Please Insert A Name')
+	end
+	for i,v in pairs(Services.Players:GetPlayers()) do
+		if _G.Filter == 'Display' then
+			Name = v.DisplayName
+		else
+			Name = v.Name
+		end
+		if string.lower(string.sub(Name,1,string.len(Text))) == string.lower(Text) then
+			if v == LP then
+				return warn("Can't Target Self")
+			elseif table.find(_G.Targets,v.UserId) then
+				return warn('This User Is Already Added')
+			end
+			TargetPlayer(v, TargetsFrame:FindFirstChild(Name))
+			TargetName.Text = ''
+			return warn('User: ' .. Name .. ' Has Been Added')
+		end
+	end
+	return warn('User Not Found')
+end)
+
+--UnTargetUser
+UnTarget.MouseButton1Click:Connect(function()
+	local Text = TargetName.Text
+	if Text == '' then
+		return warn('Please Insert A Name')
+	end
+	for i,v in pairs(_G.Targets) do
+		if _G.Filter == 'Display' then
+			local Success, Data = pcall(function() return Services.UserService:GetUserInfosByUserIdsAsync({v}) end)
+			if Success then
+				for i,v in ipairs(Data) do
+					Name = v.DisplayName
+				end
+			end
+		else
+			Name = Services.Players:GetNameFromUserIdAsync(v)
+		end
+		if string.lower(string.sub(Name,1,string.len(Text))) == string.lower(Text) then
+			temptable = {
+				Name = Services.Players:GetNameFromUserIdAsync(v),
+				UserId = v
+			}
+			TargetPlayer(temptable, TargetsFrame:FindFirstChild(Name))
+			TargetName.Text = ''
+			return warn('User: ' .. Name .. ' Has Been Removed')
+		end
+	end
+	return warn('User Not Found')
+end)
+
+--TargetOthers
+All.MouseButton1Click:Connect(function()
+	_G.TargetOthers = not _G.TargetOthers
+	if _G.TargetOthers then
+		All.Text = 'Target All: ON'
+		for i,v in pairs(Services.Players:GetPlayers()) do
+			if v ~= LP then
+				table.insert(OthersTable, v.UserId)
+			end
+		end
+		_G.OthersJoin = Services.Players.PlayerAdded:Connect(function(v)
+			if not _G.TargetOthers then
+				_G.OthersJoin:Disconnect()
+			end
+			table.insert(OthersTable, v.UserId)
+		end)
+	else
+		All.Text = 'Target All: OFF'
+		_G.OthersJoin:Disconnect()
+		table.clear(OthersTable)
+	end
+end)
+
+--Username
+Username.MouseButton1Click:Connect(function()
+	_G.Filter = 'User'
+	Username.BackgroundColor3 = Color3.fromRGB(16, 31, 66)
+	DisplayName.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+	for i,v in pairs(TargetsFrame:GetChildren()) do
+		if v:IsA('TextButton') then
+			PlayerId = v:FindFirstChildOfClass('NumberValue').Value
+			local Success, UserData = pcall(function() return Services.UserService:GetUserInfosByUserIdsAsync({PlayerId}) end)
+			if Success then
+				for _,c in ipairs(UserData) do
+					Name = c.Username
+					v.Name = Name
+					v.Text = Name
+				end
+			end
+		end
+	end
+end)
+
+--DisplayName
+DisplayName.MouseButton1Click:Connect(function()
+	_G.Filter = 'Display'
+	Username.BackgroundColor3 = Color3.fromRGB(3, 51, 132)
+	DisplayName.BackgroundColor3 = Color3.fromRGB(16, 31, 66)
+	for i,v in pairs(TargetsFrame:GetChildren()) do
+		if v:IsA('TextButton') then
+			PlayerId = v:FindFirstChildOfClass('NumberValue').Value
+			local Success, UserData = pcall(function() return Services.UserService:GetUserInfosByUserIdsAsync({PlayerId}) end)
+			if Success then
+				for _,c in ipairs(UserData) do
+					Name = c.DisplayName
+					v.Name = Name
+					v.Text = Name
+				end
+			end
+		end
+	end
+end)
+
+
+--Diamond
+Diamond.MouseButton1Click:Connect(function()
+	_G.Diamond = not _G.Diamond
+	if _G.Diamond then
+		InsertGear(DiamondID, DiamondName)
+		Diamond.Text = [[Diamond: 
+ON]]
+		while true do
+			task.wait()
+			if not _G.Diamond then
+				break
+			end
+			pcall(function()
+				for i,v in pairs(Services.Players:GetPlayers()) do
+					if table.find(_G.Targets,v.UserId) or table.find(OthersTable,v.UserId) then
+						if v.Character and v.Character:FindFirstChild('Humanoid') and v.Character:FindFirstChild('Humanoid').Health > 0 then
+							DiamondFunction(v.Character.Humanoid, Damage)
+						end
+					end
+				end
+			end)
+		end
+	else
+		Diamond.Text = [[Diamond: 
+OFF]]
+		_G.DiamondLoop:Disconnect()
+	end
+end)
+
+--Rocket
+Rocket.MouseButton1Click:Connect(function()
+    _G.Rocket = not _G.Rocket
+    if _G.Rocket then
+        InsertGear(RocketID, RocketName)
+        Rocket.Text = [[Rocket: 
+ON]]
+        while true do
+        	task.wait()
+            if not _G.Rocket then
+                break
+            end
+            pcall(function()
+                for i,v in pairs(Services.Players:GetPlayers()) do
+                    if table.find(_G.Targets,v.UserId) or table.find(OthersTable,v.UserId) then
+                        if v.Character and v.Character:FindFirstChild('Humanoid') and (v.Character:FindFirstChild('Humanoid').Health > 0 or v.Character:FindFirstChild('Humanoid').Health == 0/0) then
+                            RocketFunction(Vector3.new(0,-9e9,0),v.Character.Head.Position)
+                        elseif v.Character and not v.Character:FindFirstChild('Humanoid') then
+                            RocketFunction(Vector3.new(0,-9e9,0),v.Character.Head.Position)
+                        end
+                    end
+                end
+            end)
+        end
+    else
+        Rocket.Text = [[Rocket: 
+OFF]]
+    end
+end)
+
+--CBring
+CBring.MouseButton1Click:Connect(function()
+    _G.CBring = not _G.CBring
+    if _G.CBring then
+        CBring.Text = [[CBring: 
+ON]]
+        while true do
+        	task.wait()
+            if not _G.CBring then
+                break
+            end
+            pcall(function()
+                for i,v in pairs(Services.Players:GetPlayers()) do
+                    if table.find(_G.Targets,v.UserId) or table.find(OthersTable,v.UserId) then
+                        if v.Character and v.Character:FindFirstChild('Humanoid') then
+                            CBringFunction(v.Character)
+                        end
+                    end
+                end
+            end)
+        end
+    else
+        CBring.Text = [[CBring: 
+OFF]]
+    end
+end)
+
+_G.Unblind = LP.CharacterAdded:Connect(function()
+	PlayerGui = LP:FindFirstChild('PlayerGui')
+	for i,v in pairs(PlayerGui:GetChildren()) do
+		if not table.find(SafeGuis, v.Name) then
+			v:Destroy()
+		end
+	end
+end)
+
+if Services.CoreGui:FindFirstChild('PortGuiV1') then
+	Services.CoreGui.PortGuiV1:Destroy()
+end
+
+PortGuiV1.Parent = Services.CoreGui
